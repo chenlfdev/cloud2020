@@ -18,11 +18,11 @@
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
         <!-- 引入自己定义的api通用包，可以使用Payment支付Entity -->
-      <!--  <dependency>
-            <groupId>com.liuscoding</groupId>
-            <artifactId>cloud-api-commons</artifactId>
+        <dependency>
+            <groupId>com.clf.springcloud</groupId>
+            <artifactId>cloud-api-common</artifactId>
             <version>${project.version}</version>
-        </dependency>-->
+        </dependency>
         <!--boot web actuator-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -53,6 +53,5 @@
             <artifactId>junit</artifactId>
         </dependency>
     </dependencies>
-    -
 
 </project>
