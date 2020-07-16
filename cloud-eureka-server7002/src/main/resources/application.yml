@@ -1,5 +1,5 @@
 server:
-  port: 7001
+  port: 7002
 eureka:
   instance:
     #hostname: localhost #eureka服务端的实例名称
@@ -8,8 +8,5 @@ eureka:
     fetch-registry: false #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
     service-url:
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      defaultZone: http://localhost:7002/eureka/    #互相注册 再多用逗号隔开
-  server:
-    #eviction-interval-timer-in-ms: 200
-    #enable-self-preservation: true      #关闭自我保护机制，服务不可用即使剔除
+      defaultZone: http://localhost:7001/eureka/
 
