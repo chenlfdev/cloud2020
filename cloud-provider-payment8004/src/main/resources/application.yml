@@ -1,0 +1,54 @@
+server:
+  # 8004表示注册到zookeeper服务器的支付服务提供者端口号
+  port: 8004
+spring:
+  application:
+    # 服务别名---注册zookeeper到注册中心的名称
+    name: cloud-provider-payment
+  cloud:
+    zookeeper:
+      # 默认localhost:2181
+      connect-string: 47.105.181.109:2181
+
+#zookeeper下服务关闭一段时间后  节点会消失（临时节点）  重连后是新的id    AP (强一致性)
+#启动成功后在 zookeeper下的 services 下有个字符串文件 具体是
+#{
+  #  "name": "cloud-provider-payment",
+  #  "id": "674b7d21-4821-41ad-af9c-f19ddce7da9d",
+  #  "address": "192.168.192.1",
+  #  "port": 8004,
+  #  "sslPort": null,
+  #  "payload": {
+  #    "@class": "org.springframework.cloud.zookeeper.discovery.ZookeeperInstance",
+  #    "id": "application-1",
+  #    "name": "cloud-provider-payment",
+  #    "metadata": {}
+  #  },
+  #  "registrationTimeUTC": 1594993966424,
+  #  "serviceType": "DYNAMIC",
+  #  "uriSpec": {
+  #    "parts": [
+  #      {
+  #        "value": "scheme",
+  #        "variable": true
+  #      },
+  #      {
+  #        "value": "://",
+  #        "variable": false
+  #      },
+  #      {
+  #        "value": "address",
+  #        "variable": true
+  #      },
+  #      {
+  #        "value": ":",
+  #        "variable": false
+  #      },
+  #      {
+  #        "value": "port",
+  #        "variable": true
+  #      }
+  #    ]
+  #  }
+  #}
+#

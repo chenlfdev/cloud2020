@@ -1,0 +1,20 @@
+server:
+  # consul服务端口
+  port: 8006
+spring:
+  application:
+    name: cloud-provider-payment
+  cloud:
+    consul:
+      # consul注册中心地址
+      host: 47.105.181.109
+      port: 8500
+      discovery:
+        hostname: 127.0.0.1
+        service-name: ${spring.application.name}
+#        healthCheckPath: ${management.context-path}/health
+#        healthCheckInterval: 15s
+#management:
+#  endpoint:
+#    health:
+#      show-details: always
