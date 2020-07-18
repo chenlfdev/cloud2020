@@ -1,0 +1,19 @@
+server:
+  port: 80
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+#Feign + Hystrix 超时时间很坑
+ribbon:
+  ConnectTimeout: 3000 #请求连接的超时时间
+  ReadTimeout: 3000 #请求处理的超时时间
+hystrix:
+  command:
+    default: #@HystrixCommand  这里可以改成自定义的key(方法名)  自定义方法的超时,注解配置更好
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
